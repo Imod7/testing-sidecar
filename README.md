@@ -18,5 +18,5 @@ then queries
 ### Example Result
 - When you have a Sidecar instance connected to Kusama / Polkadot 
 
-![Storage endpoint](./test-results/storage.png)
+![Storage endpoint for Kusama Pallets](./test-results/storage-kusama.png)
 
