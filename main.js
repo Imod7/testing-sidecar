@@ -28,6 +28,7 @@ const main = async () => {
   const metadata = await getData('/runtime/metadata')
   const pallets = metadata.data.metadata.v14.pallets;
 
+  // Querying the STORAGE Endpoint for All Pallets
   console.log(`${colours.fg.cyan}\nTesting Storage Endpoint for All Pallets`)
   console.log(`===================================== ${colours.reset}`)
   for (var i=0; i < pallets.length; i++) {
@@ -35,12 +36,21 @@ const main = async () => {
     const errors = await getData('/pallets/' + pallets[i]['index'] + '/storage');
   }
 
-  // console.log(`${colours.fg.cyan}\nTesting Errors Endpoint for All Pallets`)
-  // console.log(`===================================== ${colours.reset}`)
-  // for (var i=0; i < pallets.length; i++) {
-  //   process.stdout.write('pallet: ' + pallets[i]['index'] + " - " + pallets[i]['name'] + "\t\t ->  ")
-  //   const errors = await getData('/pallets/' + pallets[i]['index'] + '/errors')
-  // }
+  // Querying the ERRORS Endpoint for All Pallets
+  console.log(`${colours.fg.cyan}\nTesting Errors Endpoint for All Pallets`)
+  console.log(`===================================== ${colours.reset}`)
+  for (var i=0; i < pallets.length; i++) {
+    process.stdout.write('pallet: ' + pallets[i]['index'] + " - " + pallets[i]['name'] + "\t\t ->  ")
+    const errors = await getData('/pallets/' + pallets[i]['index'] + '/errors')
+  }
+
+  // Querying the EVENTS Endpoint for All Pallets
+  console.log(`${colours.fg.cyan}\nTesting Events Endpoint for All Pallets`)
+  console.log(`===================================== ${colours.reset}`)
+  for (var i=0; i < pallets.length; i++) {
+    process.stdout.write('pallet: ' + pallets[i]['index'] + " - " + pallets[i]['name'] + "\t\t ->  ")
+    const errors = await getData('/pallets/' + pallets[i]['index'] + '/events')
+  }
 
 };
 
