@@ -1,0 +1,187 @@
+Testing events Endpoint for All Pallets by pallet index
+====================================================================
+Pallet Index: 0 - Pallet Name: System	 ->   Success: 200
+http://127.0.0.1:8080/pallets/0/events
+
+Pallet Index: 1 - Pallet Name: Babe	 ->   Error: 400
+http://127.0.0.1:8080/pallets/1/events
+
+Pallet Index: 2 - Pallet Name: Timestamp	 ->   Error: 400
+http://127.0.0.1:8080/pallets/2/events
+
+Pallet Index: 3 - Pallet Name: Indices	 ->   Success: 200
+http://127.0.0.1:8080/pallets/3/events
+
+Pallet Index: 4 - Pallet Name: Balances	 ->   Success: 200
+http://127.0.0.1:8080/pallets/4/events
+
+Pallet Index: 33 - Pallet Name: TransactionPayment	 ->   Success: 200
+http://127.0.0.1:8080/pallets/33/events
+
+Pallet Index: 5 - Pallet Name: Authorship	 ->   Error: 400
+http://127.0.0.1:8080/pallets/5/events
+
+Pallet Index: 6 - Pallet Name: Staking	 ->   Success: 200
+http://127.0.0.1:8080/pallets/6/events
+
+Pallet Index: 7 - Pallet Name: Offences	 ->   Success: 200
+http://127.0.0.1:8080/pallets/7/events
+
+Pallet Index: 34 - Pallet Name: Historical	 ->   Error: 400
+http://127.0.0.1:8080/pallets/34/events
+
+Pallet Index: 8 - Pallet Name: Session	 ->   Success: 200
+http://127.0.0.1:8080/pallets/8/events
+
+Pallet Index: 10 - Pallet Name: Grandpa	 ->   Success: 200
+http://127.0.0.1:8080/pallets/10/events
+
+Pallet Index: 11 - Pallet Name: ImOnline	 ->   Success: 200
+http://127.0.0.1:8080/pallets/11/events
+
+Pallet Index: 12 - Pallet Name: AuthorityDiscovery	 ->   Error: 400
+http://127.0.0.1:8080/pallets/12/events
+
+Pallet Index: 13 - Pallet Name: Democracy	 ->   Success: 200
+http://127.0.0.1:8080/pallets/13/events
+
+Pallet Index: 14 - Pallet Name: Council	 ->   Success: 200
+http://127.0.0.1:8080/pallets/14/events
+
+Pallet Index: 15 - Pallet Name: TechnicalCommittee	 ->   Success: 200
+http://127.0.0.1:8080/pallets/15/events
+
+Pallet Index: 16 - Pallet Name: PhragmenElection	 ->   Success: 200
+http://127.0.0.1:8080/pallets/16/events
+
+Pallet Index: 17 - Pallet Name: TechnicalMembership	 ->   Success: 200
+http://127.0.0.1:8080/pallets/17/events
+
+Pallet Index: 18 - Pallet Name: Treasury	 ->   Success: 200
+http://127.0.0.1:8080/pallets/18/events
+
+Pallet Index: 20 - Pallet Name: ConvictionVoting	 ->   Success: 200
+http://127.0.0.1:8080/pallets/20/events
+
+Pallet Index: 21 - Pallet Name: Referenda	 ->   Success: 200
+http://127.0.0.1:8080/pallets/21/events
+
+Pallet Index: 22 - Pallet Name: FellowshipCollective	 ->   Success: 200
+http://127.0.0.1:8080/pallets/22/events
+
+Pallet Index: 23 - Pallet Name: FellowshipReferenda	 ->   Success: 200
+http://127.0.0.1:8080/pallets/23/events
+
+Pallet Index: 44 - Pallet Name: Whitelist	 ->   Success: 200
+http://127.0.0.1:8080/pallets/44/events
+
+Pallet Index: 19 - Pallet Name: Claims	 ->   Success: 200
+http://127.0.0.1:8080/pallets/19/events
+
+Pallet Index: 24 - Pallet Name: Utility	 ->   Success: 200
+http://127.0.0.1:8080/pallets/24/events
+
+Pallet Index: 25 - Pallet Name: Identity	 ->   Success: 200
+http://127.0.0.1:8080/pallets/25/events
+
+Pallet Index: 26 - Pallet Name: Society	 ->   Success: 200
+http://127.0.0.1:8080/pallets/26/events
+
+Pallet Index: 27 - Pallet Name: Recovery	 ->   Success: 200
+http://127.0.0.1:8080/pallets/27/events
+
+Pallet Index: 28 - Pallet Name: Vesting	 ->   Success: 200
+http://127.0.0.1:8080/pallets/28/events
+
+Pallet Index: 29 - Pallet Name: Scheduler	 ->   Success: 200
+http://127.0.0.1:8080/pallets/29/events
+
+Pallet Index: 30 - Pallet Name: Proxy	 ->   Success: 200
+http://127.0.0.1:8080/pallets/30/events
+
+Pallet Index: 31 - Pallet Name: Multisig	 ->   Success: 200
+http://127.0.0.1:8080/pallets/31/events
+
+Pallet Index: 32 - Pallet Name: Preimage	 ->   Success: 200
+http://127.0.0.1:8080/pallets/32/events
+
+Pallet Index: 35 - Pallet Name: Bounties	 ->   Success: 200
+http://127.0.0.1:8080/pallets/35/events
+
+Pallet Index: 40 - Pallet Name: ChildBounties	 ->   Success: 200
+http://127.0.0.1:8080/pallets/40/events
+
+Pallet Index: 36 - Pallet Name: Tips	 ->   Success: 200
+http://127.0.0.1:8080/pallets/36/events
+
+Pallet Index: 37 - Pallet Name: ElectionProviderMultiPhase	 ->   Success: 200
+http://127.0.0.1:8080/pallets/37/events
+
+Pallet Index: 38 - Pallet Name: Nis	 ->   Success: 200
+http://127.0.0.1:8080/pallets/38/events
+
+Pallet Index: 45 - Pallet Name: NisCounterpartBalances	 ->   Success: 200
+http://127.0.0.1:8080/pallets/45/events
+
+Pallet Index: 39 - Pallet Name: VoterList	 ->   Success: 200
+http://127.0.0.1:8080/pallets/39/events
+
+Pallet Index: 41 - Pallet Name: NominationPools	 ->   Success: 200
+http://127.0.0.1:8080/pallets/41/events
+
+Pallet Index: 42 - Pallet Name: FastUnstake	 ->   Success: 200
+http://127.0.0.1:8080/pallets/42/events
+
+Pallet Index: 50 - Pallet Name: ParachainsOrigin	 ->   Error: 400
+http://127.0.0.1:8080/pallets/50/events
+
+Pallet Index: 51 - Pallet Name: Configuration	 ->   Error: 400
+http://127.0.0.1:8080/pallets/51/events
+
+Pallet Index: 52 - Pallet Name: ParasShared	 ->   Error: 400
+http://127.0.0.1:8080/pallets/52/events
+
+Pallet Index: 53 - Pallet Name: ParaInclusion	 ->   Success: 200
+http://127.0.0.1:8080/pallets/53/events
+
+Pallet Index: 54 - Pallet Name: ParaInherent	 ->   Error: 400
+http://127.0.0.1:8080/pallets/54/events
+
+Pallet Index: 55 - Pallet Name: ParaScheduler	 ->   Error: 400
+http://127.0.0.1:8080/pallets/55/events
+
+Pallet Index: 56 - Pallet Name: Paras	 ->   Success: 200
+http://127.0.0.1:8080/pallets/56/events
+
+Pallet Index: 57 - Pallet Name: Initializer	 ->   Error: 400
+http://127.0.0.1:8080/pallets/57/events
+
+Pallet Index: 58 - Pallet Name: Dmp	 ->   Error: 400
+http://127.0.0.1:8080/pallets/58/events
+
+Pallet Index: 59 - Pallet Name: Ump	 ->   Success: 200
+http://127.0.0.1:8080/pallets/59/events
+
+Pallet Index: 60 - Pallet Name: Hrmp	 ->   Success: 200
+http://127.0.0.1:8080/pallets/60/events
+
+Pallet Index: 61 - Pallet Name: ParaSessionInfo	 ->   Error: 400
+http://127.0.0.1:8080/pallets/61/events
+
+Pallet Index: 62 - Pallet Name: ParasDisputes	 ->   Success: 200
+http://127.0.0.1:8080/pallets/62/events
+
+Pallet Index: 70 - Pallet Name: Registrar	 ->   Success: 200
+http://127.0.0.1:8080/pallets/70/events
+
+Pallet Index: 71 - Pallet Name: Slots	 ->   Success: 200
+http://127.0.0.1:8080/pallets/71/events
+
+Pallet Index: 72 - Pallet Name: Auctions	 ->   Success: 200
+http://127.0.0.1:8080/pallets/72/events
+
+Pallet Index: 73 - Pallet Name: Crowdloan	 ->   Success: 200
+http://127.0.0.1:8080/pallets/73/events
+
+Pallet Index: 99 - Pallet Name: XcmPallet	 ->   Success: 200
+http://127.0.0.1:8080/pallets/99/events
