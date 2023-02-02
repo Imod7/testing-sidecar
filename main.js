@@ -14,11 +14,11 @@ const BASE_URL = 'http://127.0.0.1:8080';
 const getData = async (endpoint) => {
   try {
     const response = await axios.get(`${BASE_URL}` + endpoint);
-    console.log(`${colours.fg.green} Success: ${response.status} ${colours.reset}`);
+    console.log(`${colours.fg.green} SUCCESS: ${response.status} ${colours.reset}`);
     console.log(`${BASE_URL}${endpoint}`);
     return response;
   } catch (errors) {
-    console.log(`${colours.fg.red} Error: ${errors.response.status} ${colours.reset}`);
+    console.log(`${colours.fg.red} FAIL: ${errors.response.status} ${colours.reset}`);
     console.log(`${BASE_URL}${endpoint}`);
     return errors;
   }

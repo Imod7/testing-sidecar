@@ -1,187 +1,187 @@
 Testing storage Endpoint for All Pallets by pallet name
 ====================================================================
-Pallet Index: 0 - Pallet Name: System	 ->   Success: 200
+Pallet Index: 0 - Pallet Name: System	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/System/storage
 
-Pallet Index: 1 - Pallet Name: Babe	 ->   Success: 200
+Pallet Index: 1 - Pallet Name: Babe	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Babe/storage
 
-Pallet Index: 2 - Pallet Name: Timestamp	 ->   Success: 200
+Pallet Index: 2 - Pallet Name: Timestamp	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Timestamp/storage
 
-Pallet Index: 3 - Pallet Name: Indices	 ->   Success: 200
+Pallet Index: 3 - Pallet Name: Indices	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Indices/storage
 
-Pallet Index: 4 - Pallet Name: Balances	 ->   Success: 200
+Pallet Index: 4 - Pallet Name: Balances	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Balances/storage
 
-Pallet Index: 33 - Pallet Name: TransactionPayment	 ->   Success: 200
+Pallet Index: 33 - Pallet Name: TransactionPayment	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/TransactionPayment/storage
 
-Pallet Index: 5 - Pallet Name: Authorship	 ->   Success: 200
+Pallet Index: 5 - Pallet Name: Authorship	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Authorship/storage
 
-Pallet Index: 6 - Pallet Name: Staking	 ->   Success: 200
+Pallet Index: 6 - Pallet Name: Staking	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Staking/storage
 
-Pallet Index: 7 - Pallet Name: Offences	 ->   Success: 200
+Pallet Index: 7 - Pallet Name: Offences	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Offences/storage
 
-Pallet Index: 34 - Pallet Name: Historical	 ->   Error: 400
+Pallet Index: 34 - Pallet Name: Historical	 ->   FAIL: 400
 http://127.0.0.1:8080/pallets/Historical/storage
 
-Pallet Index: 8 - Pallet Name: Session	 ->   Success: 200
+Pallet Index: 8 - Pallet Name: Session	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Session/storage
 
-Pallet Index: 10 - Pallet Name: Grandpa	 ->   Success: 200
+Pallet Index: 10 - Pallet Name: Grandpa	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Grandpa/storage
 
-Pallet Index: 11 - Pallet Name: ImOnline	 ->   Success: 200
+Pallet Index: 11 - Pallet Name: ImOnline	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/ImOnline/storage
 
-Pallet Index: 12 - Pallet Name: AuthorityDiscovery	 ->   Error: 400
+Pallet Index: 12 - Pallet Name: AuthorityDiscovery	 ->   FAIL: 400
 http://127.0.0.1:8080/pallets/AuthorityDiscovery/storage
 
-Pallet Index: 13 - Pallet Name: Democracy	 ->   Success: 200
+Pallet Index: 13 - Pallet Name: Democracy	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Democracy/storage
 
-Pallet Index: 14 - Pallet Name: Council	 ->   Success: 200
+Pallet Index: 14 - Pallet Name: Council	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Council/storage
 
-Pallet Index: 15 - Pallet Name: TechnicalCommittee	 ->   Success: 200
+Pallet Index: 15 - Pallet Name: TechnicalCommittee	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/TechnicalCommittee/storage
 
-Pallet Index: 16 - Pallet Name: PhragmenElection	 ->   Success: 200
+Pallet Index: 16 - Pallet Name: PhragmenElection	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/PhragmenElection/storage
 
-Pallet Index: 17 - Pallet Name: TechnicalMembership	 ->   Success: 200
+Pallet Index: 17 - Pallet Name: TechnicalMembership	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/TechnicalMembership/storage
 
-Pallet Index: 18 - Pallet Name: Treasury	 ->   Success: 200
+Pallet Index: 18 - Pallet Name: Treasury	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Treasury/storage
 
-Pallet Index: 20 - Pallet Name: ConvictionVoting	 ->   Success: 200
+Pallet Index: 20 - Pallet Name: ConvictionVoting	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/ConvictionVoting/storage
 
-Pallet Index: 21 - Pallet Name: Referenda	 ->   Success: 200
+Pallet Index: 21 - Pallet Name: Referenda	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Referenda/storage
 
-Pallet Index: 22 - Pallet Name: FellowshipCollective	 ->   Success: 200
+Pallet Index: 22 - Pallet Name: FellowshipCollective	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/FellowshipCollective/storage
 
-Pallet Index: 23 - Pallet Name: FellowshipReferenda	 ->   Success: 200
+Pallet Index: 23 - Pallet Name: FellowshipReferenda	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/FellowshipReferenda/storage
 
-Pallet Index: 44 - Pallet Name: Whitelist	 ->   Success: 200
+Pallet Index: 44 - Pallet Name: Whitelist	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Whitelist/storage
 
-Pallet Index: 19 - Pallet Name: Claims	 ->   Success: 200
+Pallet Index: 19 - Pallet Name: Claims	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Claims/storage
 
-Pallet Index: 24 - Pallet Name: Utility	 ->   Error: 400
+Pallet Index: 24 - Pallet Name: Utility	 ->   FAIL: 400
 http://127.0.0.1:8080/pallets/Utility/storage
 
-Pallet Index: 25 - Pallet Name: Identity	 ->   Success: 200
+Pallet Index: 25 - Pallet Name: Identity	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Identity/storage
 
-Pallet Index: 26 - Pallet Name: Society	 ->   Success: 200
+Pallet Index: 26 - Pallet Name: Society	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Society/storage
 
-Pallet Index: 27 - Pallet Name: Recovery	 ->   Success: 200
+Pallet Index: 27 - Pallet Name: Recovery	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Recovery/storage
 
-Pallet Index: 28 - Pallet Name: Vesting	 ->   Success: 200
+Pallet Index: 28 - Pallet Name: Vesting	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Vesting/storage
 
-Pallet Index: 29 - Pallet Name: Scheduler	 ->   Success: 200
+Pallet Index: 29 - Pallet Name: Scheduler	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Scheduler/storage
 
-Pallet Index: 30 - Pallet Name: Proxy	 ->   Success: 200
+Pallet Index: 30 - Pallet Name: Proxy	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Proxy/storage
 
-Pallet Index: 31 - Pallet Name: Multisig	 ->   Success: 200
+Pallet Index: 31 - Pallet Name: Multisig	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Multisig/storage
 
-Pallet Index: 32 - Pallet Name: Preimage	 ->   Success: 200
+Pallet Index: 32 - Pallet Name: Preimage	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Preimage/storage
 
-Pallet Index: 35 - Pallet Name: Bounties	 ->   Success: 200
+Pallet Index: 35 - Pallet Name: Bounties	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Bounties/storage
 
-Pallet Index: 40 - Pallet Name: ChildBounties	 ->   Success: 200
+Pallet Index: 40 - Pallet Name: ChildBounties	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/ChildBounties/storage
 
-Pallet Index: 36 - Pallet Name: Tips	 ->   Success: 200
+Pallet Index: 36 - Pallet Name: Tips	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Tips/storage
 
-Pallet Index: 37 - Pallet Name: ElectionProviderMultiPhase	 ->   Success: 200
+Pallet Index: 37 - Pallet Name: ElectionProviderMultiPhase	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/ElectionProviderMultiPhase/storage
 
-Pallet Index: 38 - Pallet Name: Nis	 ->   Success: 200
+Pallet Index: 38 - Pallet Name: Nis	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Nis/storage
 
-Pallet Index: 45 - Pallet Name: NisCounterpartBalances	 ->   Success: 200
+Pallet Index: 45 - Pallet Name: NisCounterpartBalances	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/NisCounterpartBalances/storage
 
-Pallet Index: 39 - Pallet Name: VoterList	 ->   Success: 200
+Pallet Index: 39 - Pallet Name: VoterList	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/VoterList/storage
 
-Pallet Index: 41 - Pallet Name: NominationPools	 ->   Success: 200
+Pallet Index: 41 - Pallet Name: NominationPools	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/NominationPools/storage
 
-Pallet Index: 42 - Pallet Name: FastUnstake	 ->   Success: 200
+Pallet Index: 42 - Pallet Name: FastUnstake	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/FastUnstake/storage
 
-Pallet Index: 50 - Pallet Name: ParachainsOrigin	 ->   Error: 400
+Pallet Index: 50 - Pallet Name: ParachainsOrigin	 ->   FAIL: 400
 http://127.0.0.1:8080/pallets/ParachainsOrigin/storage
 
-Pallet Index: 51 - Pallet Name: Configuration	 ->   Success: 200
+Pallet Index: 51 - Pallet Name: Configuration	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Configuration/storage
 
-Pallet Index: 52 - Pallet Name: ParasShared	 ->   Success: 200
+Pallet Index: 52 - Pallet Name: ParasShared	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/ParasShared/storage
 
-Pallet Index: 53 - Pallet Name: ParaInclusion	 ->   Success: 200
+Pallet Index: 53 - Pallet Name: ParaInclusion	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/ParaInclusion/storage
 
-Pallet Index: 54 - Pallet Name: ParaInherent	 ->   Success: 200
+Pallet Index: 54 - Pallet Name: ParaInherent	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/ParaInherent/storage
 
-Pallet Index: 55 - Pallet Name: ParaScheduler	 ->   Success: 200
+Pallet Index: 55 - Pallet Name: ParaScheduler	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/ParaScheduler/storage
 
-Pallet Index: 56 - Pallet Name: Paras	 ->   Success: 200
+Pallet Index: 56 - Pallet Name: Paras	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Paras/storage
 
-Pallet Index: 57 - Pallet Name: Initializer	 ->   Success: 200
+Pallet Index: 57 - Pallet Name: Initializer	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Initializer/storage
 
-Pallet Index: 58 - Pallet Name: Dmp	 ->   Success: 200
+Pallet Index: 58 - Pallet Name: Dmp	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Dmp/storage
 
-Pallet Index: 59 - Pallet Name: Ump	 ->   Success: 200
+Pallet Index: 59 - Pallet Name: Ump	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Ump/storage
 
-Pallet Index: 60 - Pallet Name: Hrmp	 ->   Success: 200
+Pallet Index: 60 - Pallet Name: Hrmp	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Hrmp/storage
 
-Pallet Index: 61 - Pallet Name: ParaSessionInfo	 ->   Success: 200
+Pallet Index: 61 - Pallet Name: ParaSessionInfo	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/ParaSessionInfo/storage
 
-Pallet Index: 62 - Pallet Name: ParasDisputes	 ->   Success: 200
+Pallet Index: 62 - Pallet Name: ParasDisputes	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/ParasDisputes/storage
 
-Pallet Index: 70 - Pallet Name: Registrar	 ->   Success: 200
+Pallet Index: 70 - Pallet Name: Registrar	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Registrar/storage
 
-Pallet Index: 71 - Pallet Name: Slots	 ->   Success: 200
+Pallet Index: 71 - Pallet Name: Slots	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Slots/storage
 
-Pallet Index: 72 - Pallet Name: Auctions	 ->   Success: 200
+Pallet Index: 72 - Pallet Name: Auctions	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Auctions/storage
 
-Pallet Index: 73 - Pallet Name: Crowdloan	 ->   Success: 200
+Pallet Index: 73 - Pallet Name: Crowdloan	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/Crowdloan/storage
 
-Pallet Index: 99 - Pallet Name: XcmPallet	 ->   Success: 200
+Pallet Index: 99 - Pallet Name: XcmPallet	 ->   SUCCESS: 200
 http://127.0.0.1:8080/pallets/XcmPallet/storage
