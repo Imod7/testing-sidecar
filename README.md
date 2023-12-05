@@ -9,7 +9,7 @@ then queries
 - git clone this repo
 - cd to cloned repo
 - Have `nodejs` installed
-- Install axios: `install i axios`
+- Install axios: `npm install axios`
 
 ### How to run
 - If the instance of Sidecar you are running is from `master` branch, you should comment lines 38-43.
