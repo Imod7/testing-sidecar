@@ -9,7 +9,7 @@ then queries
 - git clone this repo
 - cd to cloned repo
 - Have `nodejs` installed
-- Install axios: `npm install i axios`
+- Install axios: `install i axios`
 
 ### How to run
 - If the instance of Sidecar you are running is from `master` branch, you should comment lines 38-43.
@@ -20,3 +20,5 @@ then queries
 
 ![Storage endpoint for Kusama Pallets](./test-results/storage-kusama.png)
 
+## Testing Decoded XCM Msgs in Sidecar's Blocks Endpoints
+The related script is in folder [decoded-xcm-msg](./decoded-xcm-msg/).
