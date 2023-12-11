@@ -1,16 +1,29 @@
 In `polkadot-asset-hub.txt` :
-Block 4413420 has 2 Horizontal Messages from same para
+Block 5154532 has 1 Horizontal Message
+Block 4413420 has 1 Horizontal Message
+Block 4398301 has 2 Horizontal Messages, 1 from para=2006 and 1 from para=2034
+Block 4362190 has 1 Downward Message
+Block 3999186 has 1 Horizontal Message
+Block 2406353 has 1 Downward Message
 Block 2372744 has 1 Downward (receiveTeleportedAsset) and 1 Horizontal Messages
+Block 1212484 has 1 Downward Message
 
 In `kusama-asset-hub.txt` :
-Block 3356317 has Downward and Horizontal Messages
+Block 5860600 has a SetTopic instruction
+Block 3519435 has 1 Horizontal Message from para=2023
+Block 3356317 has 1 Downward and 1 Horizontal Message from para=2085
 Block 3356306 has Downward and Horizontal Messages
-Block 3356247 has Downward and Horizontal Messages
+Block 3356247 has 1 Downward and 1 Horizontal Message from para=2085
 Block 3356206 has Downward and Horizontal Messages
-Block 3356195 has Downward and Horizontal Messages
+Block 3356195 has Downward and Horizontal Messages with paraId = 2085
+Block 3472032 has 1 Horizontal Message from paraId=2087
+Block 3222069 has 1 Horizontal Message from paraId=2000
 In range of blocks 3348590-3348990 there are approx 10xcm
 
 In `polkadot.txt` :
 Block 18468942 has 2 Upward Messages, 1 for paraId=2000, 1 for paraId=2012
-Block 18462413 has 2 Upward Messages, for 2 different paras
+Block 18462413 has 2 Upward Messages
 Block 18296788 has 1 Upward Message for paraId=2004 Moonbeam
+
+In `kusama.txt` :
+Block 20482489 has 1 Upward Message for paraId=2000

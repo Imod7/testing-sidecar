@@ -1,4 +1,5 @@
 const axios = require('axios');
+const { error } = require('node:console');
 const fs = require('node:fs');
 
 const colours = {
@@ -49,17 +50,14 @@ const main = async () => {
         response.data.decodedXcmMsgs.forEach(element => {
           console.log(element);
         });
-        if (response.data.decodedXcmMsgs[0].horizontalMessages != undefined) {
-          console.log(response.data.decodedXcmMsgs[0].horizontalMessages[0].msg_decoded, '\n');
-        } if (response.data.decodedXcmMsgs[0].upwardMessages != undefined) {
-          console.log(response.data.decodedXcmMsgs[0].upwardMessages[0].msg_decoded, '\n');
-        } if (response.data.decodedXcmMsgs[0].downwardMessages != undefined) {
-          console.log(response.data.decodedXcmMsgs[0].downwardMessages[0].msg_decoded, '\n');
-        }
       }
     }
-  } catch (errors) {
-    console.log(`${colours.fg.red} Please restart your Sidecar instance and connect to ${chain} ${colours.reset}`);
+  } catch (error) {
+    if (error.code == 'ECONNREFUSED') {
+      console.log(`${colours.fg.red} Please start your Sidecar instance and connect to ${chain} ${colours.reset}`);
+    } else {
+      console.log(`${colours.fg.red} ERROR ${colours.reset}`);
+    }
   }
 };
 
