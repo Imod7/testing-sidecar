@@ -20,24 +20,34 @@ const main = async () => {
   var array = [];
   switch(arguments[2]) {
     case 'kusama':
-      array = fs.readFileSync('blocks-with-xcm-msgs/kusama.txt').toString().split("\n");
       chain = 'kusama';
       break;
     case 'polkadot':
-      array = fs.readFileSync('blocks-with-xcm-msgs/polkadot.txt').toString().split("\n");
       chain = 'polkadot';
       break;
     case 'kah':
-      array = fs.readFileSync('blocks-with-xcm-msgs/kusama-asset-hub.txt').toString().split("\n");
       chain = 'kusama-asset-hub';
       break;
     case 'pah':
-      array = fs.readFileSync('blocks-with-xcm-msgs/polkadot-asset-hub.txt').toString().split("\n");
+      chain = 'polkadot-asset-hub';
+      break;
+    case 'astar':
+      chain = 'astar';
+      break;
+    case 'moonbeam':
+      chain = 'moonbeam';
+      break;
+    case 'acala':
+      chain = 'acala';
+      break;
+    case 'basilisk':
+      chain = 'basilisk';
       break;
     default:
-      console.log('Please choose one of the following values as argument: kusama, polkadot, kah or pah');
+      console.log('Please choose one of the following values as argument: kusama, polkadot, kah, pah, astar, moonbeam, acala, basilisk');
       process.exit(1);
   }
+  array = fs.readFileSync('blocks-with-xcm-msgs/' + chain + '.txt').toString().split("\n");
 
   console.log(`XCM Msgs in Blocks Endpoint`);
   console.log(`===========================`);
