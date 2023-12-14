@@ -11,9 +11,15 @@ Script that queries Sidecar's `blocks` endpoints and retrieves the decoded XCM m
     - `kusama`: for Kusama chain
     - `kah`: for Kusama Asset Hub chain
     - `pah`: for Polkadot Asset Hub chain
+    - `acala`: for Acala Parachain
+    - `astar`: for Astar Parachain
+    - `basilisk`: for Basilisk Parachain
+    - `manta`: for Manta Parachain
+    - `moonbeam`: for Moonbeam Parachain
+    - `robo`: for Robonomics Parachain
 
   depending on the chain we would like to test each time.
 
 ### Notes
 - Check in `/blocks-with-xcm-msgs/` to find a file with test blocks for each chain.
-- Check in `/blocks-with-xcm-msgs/_notes` to see what type of messages are expected in each test block.
+- Check in `/blocks-with-xcm-msgs/_NOTES.md` to see what type of messages are expected in each test block.

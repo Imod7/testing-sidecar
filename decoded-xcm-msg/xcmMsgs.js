@@ -43,6 +43,12 @@ const main = async () => {
     case 'basilisk':
       chain = 'basilisk';
       break;
+    case 'manta':
+      chain = 'manta';
+      break;
+    case 'robo':
+      chain = 'robo';
+      break;
     default:
       console.log('Please choose one of the following values as argument: kusama, polkadot, kah, pah, astar, moonbeam, acala, basilisk');
       process.exit(1);
