@@ -15,45 +15,9 @@ const colours = {
 const BASE_URL = 'http://127.0.0.1:8080';
 
 const main = async () => {
-  var arguments = process.argv; 
-  var chain = '';
+  var arguments = process.argv;
   var array = [];
-  switch(arguments[2]) {
-    case 'kusama':
-      chain = 'kusama';
-      break;
-    case 'polkadot':
-      chain = 'polkadot';
-      break;
-    case 'kah':
-      chain = 'kusama-asset-hub';
-      break;
-    case 'pah':
-      chain = 'polkadot-asset-hub';
-      break;
-    case 'astar':
-      chain = 'astar';
-      break;
-    case 'moonbeam':
-      chain = 'moonbeam';
-      break;
-    case 'acala':
-      chain = 'acala';
-      break;
-    case 'basilisk':
-      chain = 'basilisk';
-      break;
-    case 'manta':
-      chain = 'manta';
-      break;
-    case 'robo':
-      chain = 'robo';
-      break;
-    default:
-      console.log('Please choose one of the following values as argument: kusama, polkadot, kah, pah, astar, moonbeam, acala, basilisk');
-      process.exit(1);
-  }
-  array = fs.readFileSync('blocks-with-xcm-msgs/' + chain + '.txt').toString().split("\n");
+  array = fs.readFileSync('blocks-with-xcm-msgs/' + arguments[2] + '.txt').toString().split("\n");
 
   console.log(`XCM Msgs in Blocks Endpoint`);
   console.log(`===========================`);
@@ -70,7 +34,7 @@ const main = async () => {
     }
   } catch (error) {
     if (error.code == 'ECONNREFUSED') {
-      console.log(`${colours.fg.red} Please start your Sidecar instance and connect to ${chain} ${colours.reset}`);
+      console.log(`${colours.fg.red} Please start your Sidecar instance and connect to ${arguments[2]} ${colours.reset}`);
     } else {
       console.log(`${colours.fg.red} ERROR ${colours.reset}`);
     }

@@ -1,3 +1,10 @@
+In `astar.txt`:
+- Block 5235919 Should show 1 Horizontal Message - [XCM Msg in Subscan](https://astar.subscan.io/xcm_message/polkadot-ea10bb49b934a1c72feee1cee1679ece7a5680b3)
+- Block 4733673 has 1 Horizontal Message from paraId=2030
+
+In `bifrost.txt`:
+- Block 1148216 Should show 1 Downward Message - [XCM Msg in Subscan](https://bifrost.subscan.io/xcm_message/polkadot-80213667df835dcaa1803d32dd13de461b3f68a0)
+
 In `polkadot-asset-hub.txt` :
 - Block 5154532 has 1 Horizontal Message
 - Block 4413420 has 1 Horizontal Message
@@ -37,9 +44,6 @@ In `kusama.txt` :
     - one from paraId=2110
 - Block 20402870 has 1 Upward Message from paraId=2000
 
-In `astar.txt`:
-- Block 4733673 has 1 Horizontal Message from paraId=2030
-
 In `acala.txt`:
 - 5089947 1 Horizontal
 - 5003782 1 Horizontal
@@ -57,6 +61,7 @@ In `basilisk.txt`:
 
 In `manta.txt`:
 - Block 1076772 Should show 1 Horizontal Message from paraId=2000 - [XCM Msg](https://manta.subscan.io/xcm_message/polkadot-ee05ab9fb1cb8726d2c679f4fe6d1a8daf25d073)
+- Block 995092 1 Horizontal msg - [Subscan link](https://manta.subscan.io/xcm_message/polkadot-32df782feb7b173cec23ac87faf716f621939e74)
 - Block 772956 1 Horizontal Message from paraId=2000 - [XCM Msg](https://manta.subscan.io/xcm_message/polkadot-5cba01f91704512f8a0d80bb033b70691f6cd228)
 
 In `robo.txt`:
