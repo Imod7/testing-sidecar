@@ -17,6 +17,7 @@ In `polkadot-asset-hub.txt` :
 - Block 1212484 has 1 Downward Message
 
 In `kusama-asset-hub.txt` :
+- Block 6202603 Should show 2 Horizontal Messages, 1 from paraId=2087 and 1 from paraId=2110 - [XCM msgs in Block](https://assethub-kusama.subscan.io/block/6202603)
 - Block 5860600 has a SetTopic instruction
 - Block 3519435 has 1 Horizontal Message from para=2023
 - Block 3356317 has:
