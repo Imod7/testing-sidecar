@@ -1,4 +1,5 @@
 const axios = require('axios');
+const { json } = require('express');
 const { error } = require('node:console');
 const fs = require('node:fs');
 
@@ -14,27 +15,38 @@ const colours = {
 
 const BASE_URL = 'http://127.0.0.1:8080';
 
-const main = async () => {
-  var arguments = process.argv;
-  var array = [];
-  array = fs.readFileSync('blocks-with-xcm-msgs/' + arguments[2] + '.txt').toString().split("\n");
-
+async function printBlocks(blocksInfo) {
   console.log(`XCM Msgs in Blocks Endpoint`);
   console.log(`===========================`);
+  console.log("blocksInfo", blocksInfo);
+
   try {
-    for (var i=0; i < array.length; i++) {
-      const endpoint = `${BASE_URL}` + '/blocks/' + array[i];
+    for (var i=0; i < blocksInfo.length; i++) {
+      var blocksInfoSplit = blocksInfo[i].split("-");
+      console.log("\nblocksInfoSplit", blocksInfoSplit);
+      const endpoint = `${BASE_URL}` + '/blocks/' + blocksInfoSplit[0];
       const response = await axios.get(endpoint, { params: { decodedXcmMsgs: true } });
+
       console.log(`${colours.fg.yellow} ${i + 1} Endpoint: ${endpoint}` + '?decodedXcmMsgs=true' + `${colours.reset}`);
+
       if (response.data.decodedXcmMsgs != undefined) {
         console.log("Downward Messages:");
         response.data.decodedXcmMsgs.downwardMessages?.forEach(element => {
-          console.log(element);
+          console.log(element, "\n");
         });
+
         console.log("Horizontal Messages:");
-        response.data.decodedXcmMsgs.horizontalMessages?.forEach(element => {
-          console.log(element);
+        response.data.decodedXcmMsgs.horizontalMessages?.forEach((element, index, _) => {
+          const jsonObj = JSON.parse(blocksInfoSplit[1])
+          if (element.sentAt != jsonObj[index].sentAt.toString() || element.paraId != jsonObj[index].para_id.toString()) {
+            console.log(`${colours.fg.red} FAIL ${colours.reset}`);
+          } else {
+            console.log(`${colours.fg.green} PASS ${colours.reset}`);
+          }
+
+          console.log(element, "\n");
         });
+
         console.log("Upward Messages:");
         response.data.decodedXcmMsgs.upwardMessages?.forEach(element => {
           console.log(element);
@@ -49,6 +61,19 @@ const main = async () => {
       console.log(`${colours.fg.red} Note : make sure to connect your sidecar instance to the chain you are testing ${colours.reset}`);
     }
   }
+}
+
+const main = async () => {
+  var arguments = process.argv;
+  var blocks = [];
+
+  if (arguments.length === 3) {
+    blocks = fs.readFileSync('blocks-with-xcm-msgs/' + arguments[2] + '.txt').toString().split("\n");
+  } else if (arguments.length === 4 && arguments[3] === 'transit') {
+    blocks = fs.readFileSync('blocks-with-xcm-msgs/' + arguments[2] + '_intransit.txt').toString().split("\n");
+  }
+  printBlocks(blocks);
+  fs.closeSync(1);
 };
 
 main();

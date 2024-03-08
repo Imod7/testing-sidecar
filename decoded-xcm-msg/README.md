@@ -25,6 +25,8 @@ Script that queries Sidecar's `blocks` endpoints and retrieves the decoded XCM m
     - `polkadot`: for Polkadot Relay chain
     - `robonomics`: for Robonomics Parachain
     - `westend-asset-hub`: for Westend Asset Hub
+- Optional flag `transit` to run for blocks with `in transit` messages, e.g.:
+    - `node xcmMsgs.js kusama transit` or `node xcmMsgs.js polkadot transit`
 
   depending on the chain you would like to test each time.
 
