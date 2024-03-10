@@ -23,32 +23,55 @@ async function printBlocks(blocksInfo) {
   try {
     for (var i=0; i < blocksInfo.length; i++) {
       var blocksInfoSplit = blocksInfo[i].split("-");
-      console.log("\nblocksInfoSplit", blocksInfoSplit);
       const endpoint = `${BASE_URL}` + '/blocks/' + blocksInfoSplit[0];
       const response = await axios.get(endpoint, { params: { decodedXcmMsgs: true } });
 
-      console.log(`${colours.fg.yellow} ${i + 1} Endpoint: ${endpoint}` + '?decodedXcmMsgs=true' + `${colours.reset}`);
+      console.log(`\n${colours.fg.yellow}${i + 1} Endpoint: ${endpoint}` + '?decodedXcmMsgs=true' + `${colours.reset}`);
 
       if (response.data.decodedXcmMsgs != undefined) {
-        console.log("Downward Messages:");
-        response.data.decodedXcmMsgs.downwardMessages?.forEach(element => {
-          console.log(element, "\n");
-        });
-
-        console.log("Horizontal Messages:");
-        response.data.decodedXcmMsgs.horizontalMessages?.forEach((element, index, _) => {
+        console.log(`${colours.fg.cyan} Downward Messages: ${colours.reset}`);
+        console.log(response.data.decodedXcmMsgs.downwardMessages)
+        response.data.decodedXcmMsgs.downwardMessages?.forEach((element, index, _) => {
           const jsonObj = JSON.parse(blocksInfoSplit[1])
-          if (element.sentAt != jsonObj[index].sentAt.toString() || element.paraId != jsonObj[index].para_id.toString()) {
+          console.log(jsonObj.DM);
+          console.log("element", element, response.data.decodedXcmMsgs.downwardMessages.length, Object.keys(jsonObj.DM).length)
+          if (element.sentAt != jsonObj.DM[index].sentAt.toString()) {
+            console.log(`${colours.fg.red} FAIL ${colours.reset}`);
+          } else if (response.data.decodedXcmMsgs.downwardMessages.length != Object.keys(jsonObj.DM).length) {
             console.log(`${colours.fg.red} FAIL ${colours.reset}`);
           } else {
             console.log(`${colours.fg.green} PASS ${colours.reset}`);
           }
-
-          console.log(element, "\n");
+          console.log(element);
         });
 
-        console.log("Upward Messages:");
-        response.data.decodedXcmMsgs.upwardMessages?.forEach(element => {
+        console.log(`${colours.fg.cyan} Horizontal Messages: ${colours.reset}`);
+        console.log(response.data.decodedXcmMsgs.horizontalMessages)
+        response.data.decodedXcmMsgs.horizontalMessages?.forEach((element, index, _) => {
+          const jsonObj = JSON.parse(blocksInfoSplit[1])
+          console.log("element", element, response.data.decodedXcmMsgs.horizontalMessages.length, Object.keys(jsonObj.HM).length)
+          if (element.sentAt != jsonObj.HM[index].sentAt.toString() || element.paraId != jsonObj.HM[index].para_id.toString()) {
+            console.log(`${colours.fg.red} FAIL ${colours.reset}`);
+          } else if (response.data.decodedXcmMsgs.horizontalMessages.length != Object.keys(jsonObj.HM).length) {
+            console.log(`${colours.fg.red} FAIL ${colours.reset}`);
+          } else {
+            console.log(`${colours.fg.green} PASS ${colours.reset}`);
+          }
+          console.log(element);
+        });
+
+        console.log(`${colours.fg.cyan} Upward Messages: ${colours.reset}`);
+        console.log(response.data.decodedXcmMsgs.upwardMessages)
+        response.data.decodedXcmMsgs.upwardMessages?.forEach((element, index, _) => {
+          const jsonObj = JSON.parse(blocksInfoSplit[1])
+          console.log("element", element)
+          if (element.paraId != jsonObj.UM[index].paraId.toString() || element.paraId != jsonObj.UM[index].paraId.toString()) {
+            console.log(`${colours.fg.red} FAIL ${colours.reset}`);
+          } else if (response.data.decodedXcmMsgs.upwardMessages.length != Object.keys(jsonObj.UM).length) {
+            console.log(`${colours.fg.red} FAIL ${colours.reset}`);
+          } else {
+            console.log(`${colours.fg.green} PASS ${colours.reset}`);
+          }
           console.log(element);
         });
       }
