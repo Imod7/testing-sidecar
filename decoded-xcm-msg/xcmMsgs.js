@@ -30,48 +30,84 @@ async function printBlocks(blocksInfo) {
 
       if (response.data.decodedXcmMsgs != undefined) {
         console.log(`${colours.fg.cyan} Downward Messages: ${colours.reset}`);
-        console.log(response.data.decodedXcmMsgs.downwardMessages)
         response.data.decodedXcmMsgs.downwardMessages?.forEach((element, index, _) => {
+          console.log("index: ", index);
           const jsonObj = JSON.parse(blocksInfoSplit[1])
-          console.log(jsonObj.DM);
-          console.log("element", element, response.data.decodedXcmMsgs.downwardMessages.length, Object.keys(jsonObj.DM).length)
-          if (element.sentAt != jsonObj.DM[index].sentAt.toString()) {
-            console.log(`${colours.fg.red} FAIL ${colours.reset}`);
-          } else if (response.data.decodedXcmMsgs.downwardMessages.length != Object.keys(jsonObj.DM).length) {
-            console.log(`${colours.fg.red} FAIL ${colours.reset}`);
+
+          if (element.sentAt === jsonObj.DM[index].sentAt.toString()) {
+            console.log(`${colours.fg.green} PASS (same sentAt) ${colours.reset}`);
           } else {
-            console.log(`${colours.fg.green} PASS ${colours.reset}`);
+            console.log(`${colours.fg.red} FAIL (diff sentAt) ${colours.reset}`);
           }
+
+          if (response.data.decodedXcmMsgs.downwardMessages.length === Object.keys(jsonObj.DM).length) {
+            console.log(`${colours.fg.green} PASS (same # of xcm) ${colours.reset}`);
+          } else {
+            console.log(`${colours.fg.red} FAIL (diff # of xcm) ${colours.reset}`);
+          }
+
           console.log(element);
         });
 
         console.log(`${colours.fg.cyan} Horizontal Messages: ${colours.reset}`);
         console.log(response.data.decodedXcmMsgs.horizontalMessages)
         response.data.decodedXcmMsgs.horizontalMessages?.forEach((element, index, _) => {
+          console.log("index: ", index);
           const jsonObj = JSON.parse(blocksInfoSplit[1])
-          console.log("element", element, response.data.decodedXcmMsgs.horizontalMessages.length, Object.keys(jsonObj.HM).length)
-          if (element.sentAt != jsonObj.HM[index].sentAt.toString() || element.paraId != jsonObj.HM[index].para_id.toString()) {
-            console.log(`${colours.fg.red} FAIL ${colours.reset}`);
-          } else if (response.data.decodedXcmMsgs.horizontalMessages.length != Object.keys(jsonObj.HM).length) {
-            console.log(`${colours.fg.red} FAIL ${colours.reset}`);
+
+          if (element.sentAt === jsonObj.HM[index].sentAt.toString()) {
+            console.log(`${colours.fg.green} PASS (same sentAt) ${colours.reset}`);
           } else {
-            console.log(`${colours.fg.green} PASS ${colours.reset}`);
+            console.log(`${colours.fg.red} FAIL (diff sentAt) ${colours.reset}`);
           }
+
+          if (element.paraId === jsonObj.HM[index].para_id.toString()) {
+            console.log(`${colours.fg.green} PASS (same paraId) ${colours.reset}`);
+          } else {
+            console.log(`${colours.fg.red} FAIL (diff paraId) ${colours.reset}`);
+          }
+
+          if (response.data.decodedXcmMsgs.horizontalMessages.length === Object.keys(jsonObj.HM).length) {
+            console.log(`${colours.fg.green} PASS (same # of xcm) ${colours.reset}`);
+          } else {
+            console.log(`${colours.fg.red} FAIL (diff # of xcm) ${colours.reset}`);
+          }
+
           console.log(element);
         });
 
         console.log(`${colours.fg.cyan} Upward Messages: ${colours.reset}`);
-        console.log(response.data.decodedXcmMsgs.upwardMessages)
         response.data.decodedXcmMsgs.upwardMessages?.forEach((element, index, _) => {
+          console.log("index: ", index);
           const jsonObj = JSON.parse(blocksInfoSplit[1])
-          console.log("element", element)
-          if (element.paraId != jsonObj.UM[index].paraId.toString() || element.paraId != jsonObj.UM[index].paraId.toString()) {
-            console.log(`${colours.fg.red} FAIL ${colours.reset}`);
-          } else if (response.data.decodedXcmMsgs.upwardMessages.length != Object.keys(jsonObj.UM).length) {
-            console.log(`${colours.fg.red} FAIL ${colours.reset}`);
+          if (element.paraId === jsonObj.UM[index].paraId.toString()) {
+            console.log(`${colours.fg.green} PASS (same paraId) ${colours.reset}`);
           } else {
-            console.log(`${colours.fg.green} PASS ${colours.reset}`);
+            console.log(`${colours.fg.red} FAIL (diff paraId) ${colours.reset}`);
           }
+
+          if (jsonObj.UM[index].hasOwnProperty("transact") && element.data[0].v3[2].hasOwnProperty("transact")) {
+            if (element.data[0].v3[2].transact.call.encoded === jsonObj.UM[index]?.transact.toString()) {
+              console.log(`${colours.fg.green} PASS (same transact call) ${colours.reset}`);
+            } else {
+            console.log(`${colours.fg.red} FAIL (diff transact call) ${colours.reset}`);
+            }
+          }
+
+          if (jsonObj.UM[index].hasOwnProperty("fungible")) {
+            if ( element.data[0].v3[0].withdrawAsset[0].fun.fungible == jsonObj.UM[index]?.fungible.toString()) {
+              console.log(`${colours.fg.green} PASS (same fun) ${colours.reset}`);
+            } else {
+              console.log(`${colours.fg.red} FAIL (diff fun) ${colours.reset}`);
+            }
+          }
+
+          if (response.data.decodedXcmMsgs.upwardMessages.length === Object.keys(jsonObj.UM).length) {
+            console.log(`${colours.fg.green} PASS (same # of xcm) ${colours.reset}`);
+          } else {
+            console.log(`${colours.fg.red} FAIL (diff # of xcm) ${colours.reset}`);
+          }
+
           console.log(element);
         });
       }
