@@ -5,24 +5,30 @@ The cases covered/tested with the below test blocks are the following:
 - Blocks with 1 Upward Message:
     - ["kusama.txt"](./kusama.txt)
     - ["polkadot.txt"](./polkadot.txt)
-- Blocks with 2 Upward Messages from different paraIds:
-    - ["kusama.txt"](./kusama.txt)
-    - ["polkadot.txt"](./polkadot.txt)
-- Blocks withe multiple Upward Messages from same paraId:
+- Blocks with 2+ Upward Messages from `same` paraId:
     - ["kusama.txt"](./kusama.txt) - Blocks: `22238422`, `13329004`, `12335217`
+- Blocks with 2 Upward Messages from `different` paraIds:
+    - ["kusama.txt"](./kusama.txt) - Blocks: `21098148`, `20447643`, `16062542`
+    - ["polkadot.txt"](./polkadot.txt) - Blocks: `18468942`
 
 #### For Relay `in transit` msgs
-- Blocks with 1 Horizontal Message (found in ["kusama_intransit.txt"](./kusama_intransit.txt) or ["polkadot_intransit"](./polkadot_intransit.txt))
-- Blocks with 1 Horizontal Message with 2 set of instructions (found in ["kusama_intransit.txt"](./kusama_intransit.txt))
-- Blocks with 1 Horizontal and 1 Upward Message (found in ["kusama_intransit.txt"](./kusama_intransit.txt))
-- Blocks with 2 Horizontal Messages from same ParaId to different paraIds (found in ["kusama_intransit.txt"](./kusama_intransit.txt) or ["polkadot_intransit"](./polkadot_intransit.txt))
-- Block with 2 Horizontal Messages from different ParaIds to different paraIds (found in ["kusama_intransit.txt"](./kusama_intransit.txt) or ["polkadot_intransit"](./polkadot_intransit.txt))
+- Blocks with 1 Horizontal Message (["kusama_intransit.txt"](./kusama_intransit.txt) or ["polkadot_intransit"](./polkadot_intransit.txt))
+- Blocks with 1 Horizontal and 1 Upward Message:
+    - ["kusama_intransit.txt"](./kusama_intransit.txt) - Blocks: `18292635`
+- Blocks with 2 Horizontal Messages with `same origin` and `same dest` paraId with (or 1 XCM with 2 set of instructions):
+    - (["kusama_intransit.txt"](./kusama_intransit.txt)) - Blocks: `21943991`, `21128375`, `16703062`
+- Blocks with 2 Horizontal Messages from `same` originParaId to `different` destinationParaIds:
+    - ["kusama_intransit.txt"](./kusama_intransit.txt)
+    - ["polkadot_intransit"](./polkadot_intransit.txt)
+- Block with 2 Horizontal Messages from `different` originParaIds to `different` destParaIds (["kusama_intransit.txt"](./kusama_intransit.txt) or ["polkadot_intransit"](./polkadot_intransit.txt))
 
 ### For Parachain
-- Blocks with 1 Horizontal Message (found in ["polkadot-asset-hub"](./polkadot-asset-hub.txt))
+- Blocks with 1 Horizontal Message (["polkadot-asset-hub"](./polkadot-asset-hub.txt))
 - Blocks with 1 Horizontal and 1 Downward Message (["polkadot-asset-hub"](./polkadot-asset-hub.txt), [manta.txt](./manta.txt))
-- Blocks with 2 Horizontal Messages from same ParaId (found in ["polkadot-asset-hub"](./polkadot-asset-hub.txt))
-- Block with 2 Horizontal Messages from different ParaIds (found in ["polkadot-asset-hub"](./polkadot-asset-hub.txt))
+- Blocks with 2 Horizontal Messages from same paraId:
+    - ["polkadot-asset-hub"](./polkadot-asset-hub.txt) - Blocks: `5035838`, `5646401`
+- Block with 2 Horizontal Messages from different paraIds:
+    - ["polkadot-asset-hub"](./polkadot-asset-hub.txt) - Blocks: `4398301`
 
 ## Status from Tests 
 | Run Test                             | Status | Category  | Messages tested                |
@@ -92,16 +98,18 @@ The cases covered/tested with the below test blocks are the following:
 - [20587882](https://kusama.subscan.io/block/20587882) 1 Up from 2087
 - [20498666](https://kusama.subscan.io/block/20498666) 1 Up from 2110
 - Block [20482489](https://kusama.subscan.io/block/20482489) has 1 Upward Message from paraId=2000
-- Block [20447643](https://kusama.subscan.io/block/20447643) has 2 Upward Messages:
+- Block [20447643](https://kusama.subscan.io/block/20447643) has 2 Upward Messages from different paraId:
     - one from paraId=2001
     - one from paraId=2110
-- [16062542](https://kusama.subscan.io/block/16062542) 2 Up:
+- [16062542](https://kusama.subscan.io/block/16062542) 2 Up from diff para:
     - 1st from 2001 - [transfer](https://kusama.subscan.io/xcm_message/kusama-7037ff046e21d1cd61d76b25f5f4ecd4a19271fe)
     - 2nd from 2085 - [transfer](https://kusama.subscan.io/xcm_message/kusama-0b5b9542465b1cc66f4d3620b983390a91a0199d)
 - [13329004](https://kusama.subscan.io/block/13329004) has 2 Upward Messages from same paraId (2023):
     - [transfer](https://kusama.subscan.io/xcm_message/kusama-ca114c0ece7f5ac7e1d3edb3be90b8b4d864e48f)
     - [transfer](https://kusama.subscan.io/xcm_message/kusama-c69ba0983f64e0e690a4e72b73c9db181c47cf46)
-- Block [12335217]((https://kusama.subscan.io/block/12335217)) has 2 Upward Messages from same paraId (2023)
+- Block [12335217]((https://kusama.subscan.io/block/12335217)) has 2 Upward Messages from same paraId (2023):
+    - 1 [transfer](https://kusama.subscan.io/xcm_message/kusama-d0bdb1684ef4edcf11b2bd6e032905f00c1df9b0)
+    - 2 [transfer](https://kusama.subscan.io/xcm_message/kusama-3bc1970efc61b107b5030a2af148106219b5aae5)
 - Block 10419024 has 1 Upward Message from paraId=2001 - [Block #10419024 in Subscan](https://kusama.subscan.io/block/10419024)
 
 ### Kusama `in transit` messages:
@@ -115,9 +123,15 @@ The cases covered/tested with the below test blocks are the following:
         - Block 22019559
         - Block [22019558](https://kusama.subscan.io/block/22019558) msg `sent`
     - We can cross check that its the same msgs by looking at their IDs
+- Block [21943991](https://kusama.subscan.io/block/21943991) has 2 Horizontal msgs from same origin paraId (2001) to same dest paraId (2023):
+    - 1st [transfer](https://kusama.subscan.io/xcm_message/kusama-2d1b8bf39f95dac4083f4eb87e08a13d80ff72b4)
+    - 2nd [transfer](https://kusama.subscan.io/xcm_message/kusama-c4579661300aa944fef6fee4d8bd054ee2d2ea4e)
 - Block [21340597](https://kusama.subscan.io/block/21340597)
     - 1 [Horizontal](https://kusama.subscan.io/xcm_message/kusama-cf4b938b4a470631a6b608cf83480e804ad27f04) Message from Bifrost (2001) to Moonriver (2023)
     - Subscan [page](https://kusama.subscan.io/xcm_message?page=933&time_dimension=date&afterId=2864f2d212c44ba9a584b2f7662efd1b01f06374) shows 2 transfers at the same time: [1](https://kusama.subscan.io/xcm_message/kusama-87c8be67ba53fae8e76e6b778e0eed431b078d6c), [2](https://kusama.subscan.io/xcm_message/kusama-cf4b938b4a470631a6b608cf83480e804ad27f04) - `2024-01-08 09:05:00`
+- Block [21128375](https://kusama.subscan.io/block/21128375) has 2 Horizontal msgs from same origin paraId (2001) to same dest paraId (2023):
+    - 1st [transfer](https://kusama.subscan.io/xcm_message/kusama-88468d3a59daeb52370fb117bf96cd10439aaf0d)
+    - 2nd [transfer](https://kusama.subscan.io/xcm_message/kusama-64fdea16ee8b72b2c2c2e0a3f897d152b4af031b)
 - Block [21118039](https://kusama.subscan.io/block/21118039) has:
     - 1 [Horizontal](https://kusama.subscan.io/xcm_message/kusama-cd727bd9ebe926632b65a8c025889d4f1c21895c) Message from Asset Hub (paraId: `1000`) through Kusama to Mangata (paraId: `2110`)
 - Block [18872451](https://kusama.subscan.io/block/18872451) has:
@@ -209,8 +223,19 @@ The cases covered/tested with the below test blocks are the following:
     createType(XcmVersionedXcm):: DoNotConstruct: Cannot construct unknown type XcmVersionedXcm
     ```
 
+### `polkadot.txt`:
+- Block 18394109
+- Block 18387535
+- Block [18468942](https://polkadot.subscan.io/block/18468942) has 2 Upward Messages from different paraIds:
+    - 1 from paraId=2000
+    - 1 from paraId=2012
+- Block 18462413 has 2 Upward Messages
+- ❗Block [15349731](https://polkadot.subscan.io/block/15349731) has 2 Upward Messages from same paraId:
+    - 1st [transfer](https://polkadot.subscan.io/xcm_message/polkadot-e8bde5378e1427557742fb0aeb92cd6374318e1a)
+    - 2nd [transfer](https://polkadot.subscan.io/xcm_message/polkadot-8b1e74d4dde41464b2bc03e2cfaee21ff662fb6e)
+
 ### Polkadot `in transit` messages:
-- Block [19809513](https://polkadot.subscan.io/block/19809513) has 2 HM from same para:
+- Block [19809513](https://polkadot.subscan.io/block/19809513) has 2 HM from same para (2034) to different para:
     - 1 Horiz from 2034 to 1000 - [transfer](https://polkadot.subscan.io/xcm_message/polkadot-8f01101ee8256f4e56ebe75a06ae4bf588d0ab4c)
     - 1 Horiz  from 2034 to 2030 - [transfer](https://polkadot.subscan.io/xcm_message/polkadot-c8d350655e87cd04735618dec8fbd343420f22cf)
 - Block [19776334]
@@ -229,23 +254,22 @@ The cases covered/tested with the below test blocks are the following:
     - 1 Horiz from 2004 to 1000 - [transfer](https://polkadot.subscan.io/xcm_message/polkadot-280628d16d4f7b733ae7bcb47f03a2086fd952d2)
     - 1 Horiz  from 2004 to 2104 - [transfer](https://polkadot.subscan.io/xcm_message/polkadot-0af6fa1e76169d84d0ee0a11dfd6281af7635800)
 
-### `polkadot.txt`:
-- 18394109
-- 18387535
-- Block 18468942 has 2 Upward Messages, 1 from paraId=2000, 1 from paraId=2012
-- Block 18462413 has 2 Upward Messages
-
 ### `polkadot-asset-hub.txt`:
-- Block [5646401](https://assethub-polkadot.subscan.io/block/5646401) has 2 Horizontal Messages with same origin and same destination paraId (2004) and with 2 set of XCM instructions:
-    - 1st Horizontal Msg from [XCM transfer](https://assethub-polkadot.subscan.io/xcm_message/polkadot-43c984be1f1e6570b468df81bed73c591f452c00)
-    - 2nd Horizontal Message from [XCM Transfer](https://assethub-polkadot.subscan.io/xcm_message/polkadot-70e2ab2de6a4c4ccd16ca3f9b00846e5fd6568d8)
+- Block [5646401](https://assethub-polkadot.subscan.io/block/5646401) has 2 HM from same paraId (2004):
+    - 1st [XCM transfer](https://assethub-polkadot.subscan.io/xcm_message/polkadot-43c984be1f1e6570b468df81bed73c591f452c00)
+    - 2nd [XCM Transfer](https://assethub-polkadot.subscan.io/xcm_message/polkadot-70e2ab2de6a4c4ccd16ca3f9b00846e5fd6568d8)
 - Block [5158967](https://assethub-polkadot.subscan.io/block/5158967) has 1 HM
 - Block [5154532](https://assethub-polkadot.subscan.io/block/5154532) has 1 HM from 2004 to 18453859
 - Block [5151703](https://assethub-polkadot.subscan.io/block/5151703)
+- Block [5035838](https://assethub-polkadot.subscan.io/extrinsic/5035838-0?event=5035838-3) has 2 HM from same paraId (2004):
+    - 1st - [transfer](https://assethub-polkadot.subscan.io/xcm_message/polkadot-7af34dcb9dd5af5c0259d6b4d06e49b0b9578a80)
+    - 2nd - [transfer](https://assethub-polkadot.subscan.io/xcm_message/polkadot-a7ddf93af68de915af7c7216e6bdddd41c95f933)
 - Block [4424424](https://assethub-polkadot.subscan.io/block/4424424)
 - Block [4413464](https://assethub-polkadot.subscan.io/block/4413464)
 - Block [4413420](https://assethub-polkadot.subscan.io/block/4413420) has 1 Horizontal Message
-- Block [4398301](https://assethub-polkadot.subscan.io/block/4398301) has 2 Horizontal Messages, 1 from para=2006 and 1 from para=2034
+- Block [4398301](https://assethub-polkadot.subscan.io/block/4398301) has 2 HM from different paraIds:
+    - 1 from para=2006
+    - 1 from para=2034
 - Block [4362190](https://assethub-polkadot.subscan.io/block/4362190) has 1 Downward Message
 - Block [4097739](https://assethub-polkadot.subscan.io/block/4097739) has 1 Horizontal Message from paraId=2034
 - Block [3999186](https://assethub-polkadot.subscan.io/block/3999186) has 1 Horizontal Message

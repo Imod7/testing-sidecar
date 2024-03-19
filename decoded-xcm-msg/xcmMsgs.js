@@ -53,18 +53,61 @@ async function printBlocks(blocksInfo) {
         console.log(response.data.decodedXcmMsgs.horizontalMessages)
         response.data.decodedXcmMsgs.horizontalMessages?.forEach((element, index, _) => {
           console.log("index: ", index);
-          const jsonObj = JSON.parse(blocksInfoSplit[1])
-
-          if (element.sentAt === jsonObj.HM[index].sentAt.toString()) {
-            console.log(`${colours.fg.green} PASS (same sentAt) ${colours.reset}`);
-          } else {
-            console.log(`${colours.fg.red} FAIL (diff sentAt) ${colours.reset}`);
+          const jsonObj = JSON.parse(blocksInfoSplit[1]);
+          if (jsonObj.HM[index].hasOwnProperty("destinationParaId")) {
+            if (element.destinationParaId === jsonObj.HM[index].destinationParaId.toString()) {
+              console.log(`${colours.fg.green} PASS (same destinationParaId) ${colours.reset}`);
+            } else {
+              console.log(element)
+              console.log(`${colours.fg.red} FAIL (diff destinationParaId) ${colours.reset}`);
+            }
           }
 
-          if (element.paraId === jsonObj.HM[index].para_id.toString()) {
-            console.log(`${colours.fg.green} PASS (same paraId) ${colours.reset}`);
+          if (jsonObj.HM[index].hasOwnProperty("sentAt")) {
+            if (element.sentAt === jsonObj.HM[index].sentAt.toString()) {
+              console.log(`${colours.fg.green} PASS (same sentAt) ${colours.reset}`);
+            } else {
+              console.log(`${colours.fg.red} FAIL (diff sentAt) ${colours.reset}`);
+            } 
+          }
+
+          if (element.originParaId === jsonObj.HM[index].originParaId.toString()) {
+            console.log(`${colours.fg.green} PASS (same originParaId) ${colours.reset}`);
           } else {
-            console.log(`${colours.fg.red} FAIL (diff paraId) ${colours.reset}`);
+            console.log(`${colours.fg.red} FAIL (diff originParaId) ${colours.reset}`);
+          }
+
+          if (jsonObj.HM[index].hasOwnProperty("data")) {
+            for (var key of Object.keys(jsonObj.HM[index]["data"])) {
+              console.log("  key : ", key);
+              
+              if (jsonObj.HM[index]["data"][key].hasOwnProperty("transact")) {
+                var elementVersioned = element.data[key].hasOwnProperty("v3") ? element.data[key].v3 : element.data[key].v2;
+                if (elementVersioned[2].transact.call.encoded === jsonObj.HM[index]["data"][key]?.transact.toString()) {
+                  console.log(`${colours.fg.green}  PASS (same transact call) ${colours.reset}`);
+                } else {
+                console.log(`${colours.fg.red}  FAIL (diff transact call) ${colours.reset}`);
+                }
+              }
+
+              if (jsonObj.HM[index]["data"][key].hasOwnProperty("fungible")) {
+                var elementVersioned = element.data[key].hasOwnProperty("v3") ? element.data[key].v3 : element.data[key].v2;
+                if (elementVersioned[0].withdrawAsset[0].fun.fungible == jsonObj.HM[index]["data"][key]?.fungible.toString()) {
+                  console.log(`${colours.fg.green}  PASS (same fun) ${colours.reset}`);
+                } else {
+                  console.log(`${colours.fg.red}  FAIL (diff fun) ${colours.reset}`);
+                }
+              }
+
+              if (jsonObj.HM[index]["data"][key].hasOwnProperty("beneficiary")) {
+                if (element.data[key].v2[3].depositAsset.beneficiary.interior.x1.accountId32.id == jsonObj.HM[index]["data"][key]?.beneficiary.toString()) {
+                  console.log(`${colours.fg.green}  PASS (same beneficiary) ${colours.reset}`);
+                } else {
+                  console.log(`${colours.fg.red}  FAIL (diff beneficiary) ${colours.reset}`);
+                }
+
+              }
+            }        
           }
 
           if (response.data.decodedXcmMsgs.horizontalMessages.length === Object.keys(jsonObj.HM).length) {
@@ -80,26 +123,42 @@ async function printBlocks(blocksInfo) {
         response.data.decodedXcmMsgs.upwardMessages?.forEach((element, index, _) => {
           console.log("index: ", index);
           const jsonObj = JSON.parse(blocksInfoSplit[1])
-          if (element.paraId === jsonObj.UM[index].paraId.toString()) {
+          if (element.originParaId === jsonObj.UM[index].originParaId.toString()) {
             console.log(`${colours.fg.green} PASS (same paraId) ${colours.reset}`);
           } else {
             console.log(`${colours.fg.red} FAIL (diff paraId) ${colours.reset}`);
           }
+          if (jsonObj.UM[index].hasOwnProperty("data")) {
+            for (var key of Object.keys(jsonObj.UM[index]["data"])) {
+              console.log("  key : ", key);
 
-          if (jsonObj.UM[index].hasOwnProperty("transact") && element.data[0].v3[2].hasOwnProperty("transact")) {
-            if (element.data[0].v3[2].transact.call.encoded === jsonObj.UM[index]?.transact.toString()) {
-              console.log(`${colours.fg.green} PASS (same transact call) ${colours.reset}`);
-            } else {
-            console.log(`${colours.fg.red} FAIL (diff transact call) ${colours.reset}`);
-            }
-          }
+              if (jsonObj.UM[index]["data"][key].hasOwnProperty("transact")) {
+                var elementVersioned = element.data[key].hasOwnProperty("v3") ? element.data[key].v3 : element.data[key].v2;
+                if (elementVersioned[2].transact.call.encoded === jsonObj.UM[index]["data"][key]?.transact.toString()) {
+                  console.log(`${colours.fg.green}  PASS (same transact call) ${colours.reset}`);
+                } else {
+                console.log(`${colours.fg.red}  FAIL (diff transact call) ${colours.reset}`);
+                }
+              }
 
-          if (jsonObj.UM[index].hasOwnProperty("fungible")) {
-            if ( element.data[0].v3[0].withdrawAsset[0].fun.fungible == jsonObj.UM[index]?.fungible.toString()) {
-              console.log(`${colours.fg.green} PASS (same fun) ${colours.reset}`);
-            } else {
-              console.log(`${colours.fg.red} FAIL (diff fun) ${colours.reset}`);
-            }
+              if (jsonObj.UM[index]["data"][key].hasOwnProperty("fungible")) {
+                var elementVersioned = element.data[key].hasOwnProperty("v3") ? element.data[key].v3 : element.data[key].v2;
+                if (elementVersioned[0].withdrawAsset[0].fun.fungible == jsonObj.UM[index]["data"][key]?.fungible.toString()) {
+                  console.log(`${colours.fg.green}  PASS (same fun) ${colours.reset}`);
+                } else {
+                  console.log(`${colours.fg.red}  FAIL (diff fun) ${colours.reset}`);
+                }
+              }
+
+              if (jsonObj.UM[index]["data"][key].hasOwnProperty("beneficiary")) {
+                if (element.data[key].v2[3].depositAsset.beneficiary.interior.x1.accountId32.id == jsonObj.UM[index]["data"][key]?.beneficiary.toString()) {
+                  console.log(`${colours.fg.green}  PASS (same beneficiary) ${colours.reset}`);
+                } else {
+                  console.log(`${colours.fg.red}  FAIL (diff beneficiary) ${colours.reset}`);
+                }
+
+              }
+            }            
           }
 
           if (response.data.decodedXcmMsgs.upwardMessages.length === Object.keys(jsonObj.UM).length) {

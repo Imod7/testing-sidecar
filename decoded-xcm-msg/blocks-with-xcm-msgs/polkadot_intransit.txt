@@ -1,7 +1,7 @@
-19809513-{ "HM": { "0":{ "sentAt":"1000", "para_id":"2034" }, "1":{ "sentAt":"2030", "para_id":"2034" }} }
-19776334-{ "HM": { "0":{"sentAt":"2030", "para_id":"2034"} }}
-19772575-{ "HM": { "0":{ "sentAt":"2034", "para_id":"2006" }, "1":{ "sentAt":"2004", "para_id":"2104" }}}
-19747411-{ "HM": { "0":{"sentAt":"2094", "para_id":"2004"} }}
-19704679-{ "HM": { "0":{ "sentAt":"2104", "para_id":"2004" }, "1":{ "sentAt":"2034", "para_id":"2032" }}}
-19387361-{ "HM": { "0":{ "sentAt":"2104", "para_id":"2004" }, "1":{ "sentAt":"2000", "para_id":"2012" }}}
-19198723-{ "HM": { "0":{ "sentAt":"1000", "para_id":"2004" }, "1":{ "sentAt":"2104", "para_id":"2004" }}}
+19809513-{ "HM": { "0":{ "destinationParaId":"1000", "originParaId":"2034" }, "1":{ "destinationParaId":"2030", "originParaId":"2034" }} }
+19776334-{ "HM": { "0":{"destinationParaId":"2030", "originParaId":"2034"} }}
+19772575-{ "HM": { "0":{ "destinationParaId":"2034", "originParaId":"2006" }, "1":{ "destinationParaId":"2004", "originParaId":"2104" }}}
+19747411-{ "HM": { "0":{"destinationParaId":"2094", "originParaId":"2004"} }}
+19704679-{ "HM": { "0":{ "destinationParaId":"2104", "originParaId":"2004" }, "1":{ "destinationParaId":"2034", "originParaId":"2032" }}}
+19387361-{ "HM": { "0":{ "destinationoriginParaId":"2104", "originParaId":"2004" }, "1":{ "destinationParaId":"2000", "originParaId":"2012" }}}
+19198723-{ "HM": { "0":{ "destinationParaId":"1000", "originParaId":"2004" }, "1":{ "destinationParaId":"2104", "originParaId":"2004" }}}
