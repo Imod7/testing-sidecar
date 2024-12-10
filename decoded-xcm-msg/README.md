@@ -6,7 +6,7 @@ Script that queries Sidecar's `blocks` endpoints and retrieves the decoded XCM m
 - Install axios: `npm install axios`.
 - Have a sidecar instance running locally (in a separate terminal).
   - The sidecar instance should be connected to the chain we would like to retrieve the XCM messages from.
-  - You can find the corresponding `.env` file needed for your sidecar instance in the folder `env-files` in the current directory.
+  - You can find the corresponding `.env` file needed for your sidecar instance in the folder `./env-files` in the current directory.
 
 ### How to run
 - Clone the repo, `testing-sidecar`

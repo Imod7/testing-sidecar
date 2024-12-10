@@ -282,6 +282,11 @@ The cases covered/tested with the below test blocks are the following:
 - Block 4410728 1 Horizontal Message from paraId=2090 - [XCM Msg](https://robonomics.subscan.io/xcm_message/kusama-2ae9667fcd6b8790a25b89191ba2a1c30ebdfaa5)
 - Block 3037322 1 Horizontal Message from paraId=2023 - [XCM Msg](https://robonomics.subscan.io/xcm_message/kusama-6778de8215d241ae3f85cb5a56edb88b570144e0)
 
+### `rococo.txt`:
+- Block [970148](https://rococo.subscan.io/block/970148) 1 Horizontal Message
+    - [transfer](https://assethub-rococo.subscan.io/xcm_message/rococo-8c82e8d2a036bc309ec59a9642000b0006e87a54) ?
+    - [transfer](https://assethub-rococo.subscan.io/xcm_message/rococo-fa1da6bce6c0e1e1100d839a387836d629272700) ?
+
 ### `westend-asset-hub.txt` :
 - Block 6163212 has 1 Horizontal Message from paraId=1002 - [Event #6163213-3 in Statescan](https://westmint.statescan.io/#/events/6163213-3)
 - Block 6154690 has 1 Downward Message - [Event #6154691-3 in Statescan](https://westmint.statescan.io/#/events/6154691-3)

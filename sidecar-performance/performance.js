@@ -15,6 +15,7 @@ const colours = {
 const BASE_URL = 'http://127.0.0.1:8080';
 
 async function getMetrics(network, startBlock, endBlock) {
+  fs.truncate('output.txt', 0, function(){console.log('File cleared!')})
   let arrMetrics = [];
   const extrinsicsPerBlock = {};
   let perfMetricsFinal = {};
@@ -30,7 +31,11 @@ async function getMetrics(network, startBlock, endBlock) {
       console.log(`Block:${colours.fg.green} ${blockNum} ${colours.reset}`);
 
       if (response.data != undefined) {
-        perfMetricsFinal = JSON.parse(JSON.stringify(response.data.performanceMetrics));
+        console.log(`Block Hash: ${colours.fg.green}` + response.data.extrinsics.length + `${colours.reset}`);
+        let perfMetricsFinal;
+        if (response.data.performanceMetrics != undefined) {
+          perfMetricsFinal = JSON.parse(JSON.stringify(response.data.performanceMetrics));
+        }
         extrinsicsPerBlock[blockNum] = response.data.extrinsics.length;
         perfMetricsFinal['blockHeight'] = blockNum;
         console.log(`Extrinsics Volume: ${colours.fg.green}` + response.data.extrinsics.length + `${colours.reset}`);
@@ -40,8 +45,6 @@ async function getMetrics(network, startBlock, endBlock) {
         for (var i = 0; i < response.data.extrinsics.length; i++) {
           eventsCount += response.data.extrinsics[i].events.length;
           eventsArray.push(response.data.extrinsics[i].events.length);
-          
-          // console.log(`Extrinsic ${i} Events: ${colours.fg.green}` + response.data.extrinsics[i].events.length + `${colours.reset}`);
         }
         console.log(`Events Count (in extrinsics): ${colours.fg.green} ${eventsCount} ${colours.reset}`);
         perfMetricsFinal['numberOfEvents'] = eventsCount;
